@@ -1,0 +1,17 @@
+iOS:
+  platformName: iOS
+  platformVersion: "11.2"
+  deviceName: iPhone 8 Plus
+  automationName: XCUITest
+  app: /Users/sarah.hesham/Desktop/rn-projects/rn-app/ios/build/Build/Products/Debug-iphonesimulator/MytReactIgnite.app
+  bundleId: com.mytheresa.rnapp
+  fullReset: true
+android:
+  platformName: Android
+  platformVersion: "9"
+  deviceName: Nexus 6
+  appPackage: com.mytheresa.rnapp
+  appActivity: com.mytheresa.rnapp.MainActivity
+  noSign: true
+  app: /Users/sarah.hesham/Desktop/rn-projects/rn-app/android/app/build/outputs/apk/stagingrelease/app-stagingrelease.apk
+  fullReset: true
