@@ -7,28 +7,29 @@ import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class ReadDataFromExcel
+class ReadDataFromExcel
 {
 	private XSSFWorkbook wb;
 	
-	public ReadDataFromExcel(String path) throws IOException
+	ReadDataFromExcel(String path) throws IOException
 	{
 		File src = new File(path);
 		FileInputStream fis = new FileInputStream(src); 
 		wb = new XSSFWorkbook(fis);
 	}
-	
-	public String getData(int sheetnumber, int rows, int columns)
+
+	@SuppressWarnings("UnnecessaryLocalVariable")
+	String getData(int sheetNumber, int rows, int columns)
 	{
-		XSSFSheet sheet = wb.getSheetAt(sheetnumber);
+		XSSFSheet sheet = wb.getSheetAt(sheetNumber);
 		DataFormatter formatter = new DataFormatter();
 		String data = formatter.formatCellValue(sheet.getRow(rows).getCell(columns));
 		return data;
 	}
 	
-	public int getRowCount(int sheetnumber)
+	int getRowCount(int sheetNumber)
 	{
-		int row = wb.getSheetAt(sheetnumber).getLastRowNum();
+		int row = wb.getSheetAt(sheetNumber).getPhysicalNumberOfRows();
 		row = row+1;
 		return row;
 	}
